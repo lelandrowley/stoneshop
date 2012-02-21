@@ -7,6 +7,8 @@ gem 'rails', '3.2.1'
 
 gem 'pg' 
 
+gem 'paperclip', '~> 2.0'
+
 
 
 

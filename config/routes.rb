@@ -1,6 +1,8 @@
 UserSubmission::Application.routes.draw do
   resources :submissions
 
+  match "submissions/admin"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

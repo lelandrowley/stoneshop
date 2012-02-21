@@ -82,5 +82,6 @@ class SubmissionsController < ApplicationController
   end
 
   def admin
+    @submissions = Submission.all
   end
 end

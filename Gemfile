@@ -9,7 +9,7 @@ gem 'pg'
 
 gem 'paperclip', '~> 2.0'
 
-gem 'aws-s3'
+gem 'aws-sdk'
 
 
 

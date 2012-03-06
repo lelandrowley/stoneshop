@@ -30,8 +30,19 @@
   </script>
 
 
+<!--does this imagesloaded plugin work?-->
+<script type="text/javascript">
+var $container = $('#container');
 
-<!--MASONRY IMAGE LOAD FIX-->
+$container.imagesLoaded( function(){
+  $container.masonry({
+    itemSelector : '.box'
+  });
+});
+</script>
+
+
+<!--MASONRY IMAGE LOAD FIX
 <script>
   $(function(){
 
@@ -44,7 +55,7 @@
     });
   
   });
-</script>
+</script-->
 
 
 <!--TYPEKIT CALL-->

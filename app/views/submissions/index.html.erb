@@ -23,26 +23,15 @@
     $('#container').masonry({
       // options
       itemSelector : '#contents',
-      columnWidth : 250px;
+      columnWidth : 250px
     });
   });
 
   </script>
 
 
-<!--does this imagesloaded plugin work?-->
-<script type="text/javascript">
-var $container = $('#container');
 
-$container.imagesLoaded( function(){
-  $container.masonry({
-    itemSelector : '.box'
-  });
-});
-</script>
-
-
-<!--MASONRY IMAGE LOAD FIX
+<!--MASONRY IMAGE LOAD FIX-->
 <script>
   $(function(){
 
@@ -50,12 +39,12 @@ $container.imagesLoaded( function(){
   
     $container.imagesLoaded( function(){
       $container.masonry({
-        itemSelector : '.thumb'
+        itemSelector : '#contents'
       });
     });
   
   });
-</script-->
+</script>
 
 
 <!--TYPEKIT CALL-->

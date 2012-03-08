@@ -98,11 +98,11 @@ var _gmrz = _gmrz || []; _gmrz.push(['_siteID', 'f75704a2-2278-11e1-912c-002219d
         <div id="contents">
           <div class="blogentry">
             <h2>
-              <a class="post-title"href="#" title="Permanent link to this item"><%= submission.title %></a>
+              <a class="post-title"href="<%= submission.link %>" title="Permanent link to this item"><%= submission.title %></a>
             </h2>
             
             <p>
-              <%= image_tag submission.photo.url(:thumb), class: 'thumb'%>
+              <%= image_tag submission.photo.url(:thumb ), class: 'thumb'%>
               <%= submission.blurb %>     
             </p>
             

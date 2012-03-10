@@ -1,35 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>//TYPECURIO\\</title>
-  <link rel="stylesheet" href="main.css" type="text/css" media="screen">
+<div id="container">
+  <% @submissions.each do |submission| %>
+    <!--POST-->
+    <div id="contents">
+      <div class="blogentry">
+        <h2>
+          <%= link_to submission.title, url_with_protocol(submission.link), :target => :blank %>
+        </h2>
+        
+        <p>
+          <%= image_tag submission.photo.url(:thumb), class: 'thumb'%>
+          <%= submission.blurb %>     
+        </p>
+        
+      </div>
+    </div>
   
+  <!--END POST-->
+  <% end %>
+</div>
 
-<!--JQUERY CALL-->
- <script src="javascripts/jquery-1.7.1.js"></script>
-
-
-
-
-<!--masonry script--> 
-  <script src="/javascripts/jquery.masonry.min.js"></script>
-
-
-
-  <script>
-  $(function(){
-    $('#container').masonry({
-      // options
-      itemSelector : '#contents',
-      columnWidth : 250px
-    });
+<script>
+$(function(){
+  $('#container').masonry({
+    // options
+    itemSelector : '#contents',
+    columnWidth : 250px
   });
+});
 
-  </script>
-
-
+</script>
 
 <!--MASONRY IMAGE LOAD FIX-->
 <script>
@@ -45,76 +44,3 @@
   
   });
 </script>
-
-
-<!--TYPEKIT CALL-->
-
-<link type="text/css" rel="stylesheet" href="main.css" />
-<script type="text/javascript" src="http://use.typekit.com/bhl2buy.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-
-<!--Grammarize-->
-<!--<script type="text/javascript">
-var _gmrz = _gmrz || []; _gmrz.push(['_siteID', 'f75704a2-2278-11e1-912c-002219d68ba2']);
-(function() {var gram = document.createElement('script');gram.type = 'text/javascript';gram.src = 'http://grammarize.com/static/js/grammarize.js';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(gram, s);
-  })();-->
-</script>
-    
-
-  </head>
-
-  <body>
-
-
-    <div id="header">
-      <div id="skipmenu">
-        <h2>
-          <a href="www.typecurio.com">TYPE CURIO</a>
-      
-          <hr id="hrule" />
-      
-          <div id="subtext">foraging for type</div>
-        </h2>
-      </div>
-    </div>
-    
-      
-    <div id="mainnav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Popular</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><%= link_to "Contribute", new_submission_path %></li>
-      </ul>
-    </div>
-
-    <div id="container">
-
-
-      <% @submissions.each do |submission| %>
-        <!--POST-->
-        <div id="contents">
-          <div class="blogentry">
-            <h2>
-              <a class="post-title" href="http://<%= submission.link %>" title="Permanent link to this item"><%= submission.title %></a>
-            </h2>
-            
-            <p>
-              <%= image_tag submission.photo.url(:thumb ), class: 'thumb'%>
-              <%= submission.blurb %>     
-            </p>
-            
-          </div>
-        </div>
-      
-      <!--END POST-->
-      <% end %>
-    </div>
-    
-    <div id="footer">
-      © TypeCurio 2010, All Rights Reserved
-    </div>
-  </body>
-</html>
